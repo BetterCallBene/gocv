@@ -14,4 +14,3 @@ services:
         - gocv
     volumes:
       - ../:/go/src/gocv.io/x/gocv/work
-      - ../examples:/go/src/gocv.io/x/gocv/cmd/

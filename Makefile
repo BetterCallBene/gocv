@@ -304,7 +304,7 @@ test:
 	go test -tags matprofile . ./contrib
 
 docker:
-	docker build --build-arg OPENCV_VERSION=$(OPENCV_VERSION) --build-arg GOVERSION=$(GOVERSION) .
+	docker build --build-arg OPENCV_VERSION=$(OPENCV_VERSION) --build-arg GOVERSION=$(GOVERSION) -t gocv .
 
 astyle:
 	astyle --project=.astylerc --recursive *.cpp,*.h

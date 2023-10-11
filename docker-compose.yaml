@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  gocv:
+    image: gocv
+    tty: true
+    stdin_open: true
+    container_name: gocv
+    entrypoint: ["bash"]
+    build:
+      context: .
+      dockerfile: Dockerfile
+      cache_from:
+        - gocv
+    volumes:
+      - ../:/go/src/gocv.io/x/gocv/work
+      - ../examples:/go/src/gocv.io/x/gocv/cmd/

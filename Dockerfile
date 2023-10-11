@@ -7,6 +7,7 @@ ENV GOPATH /go
 COPY . /go/src/gocv.io/x/gocv/
 
 WORKDIR /go/src/gocv.io/x/gocv
-RUN go build -tags example -o /build/gocv_version -i ./cmd/version/
+RUN go build -tags example -o /build/gocv_version ./cmd/version/ && mkdir -p /go/src/gocv.io/x/gocv/work
 
-CMD ["/build/gocv_version"]
+WORKDIR /go/src/gocv.io/x/gocv/work
+
